@@ -9,8 +9,8 @@ class resourceRestaurant (resources.ModelResource):
         model = restaurant
 
 class adminRestaurant(ImportExportModelAdmin, admin.ModelAdmin):
-    search_fields = ['saucer']
-    list_display = ['saucer']
+    search_fields = ['name']
+    list_display = ['name', 'direction', 'phone', 'owner']
     resource_class = resourceRestaurant
 
 admin.site.register(restaurant, adminRestaurant)
@@ -21,7 +21,18 @@ class resourceProduct (resources.ModelResource):
 
 class adminProduct(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['pk_product']
-    list_display = ['pk_product', 'code', 'saucer','description', 'price', 'fk_restaurant']
+    list_display = ['pk_product', 'saucer','description', 'price', 'fk_tipo_producto']
     resource_class = resourceProduct
 
 admin.site.register(product, adminProduct)
+
+class resourceTipo (resources.ModelResource):
+    class Meta:
+        model = tipo_producto
+
+class adminTipo(ImportExportModelAdmin, admin.ModelAdmin):
+    search_fields = ['pk_tipo_producto']
+    list_display = ['pk_tipo_producto','nombre', 'descripcion']
+    resource_class = resourceTipo
+
+admin.site.register(tipo_producto, adminTipo)
