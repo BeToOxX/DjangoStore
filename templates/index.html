@@ -39,18 +39,15 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="{%url 'menu:index'%}" class="nav-link">Inicio</a></li>
-	          <li class="nav-item"><a href="{%url 'menu:menu'%}" class="nav-link">Menu</a></li>
 	          <li class="nav-item"><a href="{%url 'menu:services'%}" class="nav-link">Servicios</a></li>
-	          <li class="nav-item"><a href="{%url 'menu:about'%}" class="nav-link">Sobre nosotros</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="{%url 'menu:shop'%}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04" >
-              	<a class="dropdown-item" href="{%url 'menu:shop'%}">Shop</a>
-                <a class="dropdown-item" href="{%url 'menu:room'%}">Carrito</a>
+                <a class="dropdown-item" href="{%url 'menu:cart'%}">Carrito</a>
                 <a class="dropdown-item" href="{%url 'menu:checkout'%}">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="{%url 'menu:contact'%}" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="{%url 'menu:contact'%}" class="nav-link">Contacto</a></li>
 	          <li class="nav-item cart"><a href="{%url 'menu:cart'%}" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
 	        </ul>
 	      </div>
@@ -224,7 +221,6 @@
           <div class="col-md-7 heading-section ftco-animate text-center">
           	<span class="subheading">Descubre</span>
             <h2 class="mb-4">Las Especialidades de Café</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div>
         </div>
         <div class="row">
@@ -233,9 +229,6 @@
     					<a href="#" class="img" style="background-image: url({%static 'images/fmocca.jpg'%});"></a>
     					<div class="text text-center pt-4">
     						<h3><a href="#">Frappuccino Mocca</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Q 20</span></p>
-    						<p><a href="{%url 'menu:cart'%}" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
         	</div>
@@ -244,9 +237,6 @@
     					<a href="#" class="img" style="background-image: url({%static 'images/foreo.jpg'%});"></a>
     					<div class="text text-center pt-4">
     						<h3><a href="#">Frappuccino Oreo</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Q 22</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
         	</div>
@@ -255,9 +245,6 @@
     					<a href="#" class="img" style="background-image: url({%static 'images/cappuccino.jpg'%});"></a>
     					<div class="text text-center pt-4">
     						<h3><a href="#">Cappuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Q 20</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
         	</div>
@@ -266,9 +253,6 @@
     					<a href="#" class="img" style="background-image: url({%static 'images/expreso.jpg'%});"></a>
     					<div class="text text-center pt-4">
     						<h3><a href="#">Expresso</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Q 20</span></p>
-    						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
         	</div>
@@ -280,9 +264,9 @@
     	<div class="container">
     		<div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Discover</span>
-            <h2 class="mb-4">Our Products</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          	<span class="subheading">Descubre</span>
+            <h2 class="mb-4">Nuestros Productos</h2>
+            <p>Conoce nuestro increíble menú.</p>
           </div>
         </div>
     		<div class="row d-md-flex">
@@ -298,70 +282,73 @@
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex align-items-center">
-		            
-		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
-					{%if allproduct%}
+		            {%if allproduct and alldrinks and allpostres%}
+		            	<div class="tab-content ftco-animate" id="v-pills-tabContent">
+
 		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
 		              	<div class="row">
 
 							{%for arrayproduct in allproduct%}
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4"  style="background-image: url({{arrayproduct.image}});"></a>
+		              				<a  class="menu-img img mb-4"  style="background-image: url({{arrayproduct.image}});"></a>
 		              				<div class="text">
 		              					<h3>{{arrayproduct.saucer}}</h3>
 		              					<p>{{arrayproduct.description}}</p>
 		              					<p class="price"><span>Q{{arrayproduct.price}}</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              					<p><a href="{%url 'menu:cart'%}" class="btn btn-primary btn-outline-primary">Añadir al carrito</a></p>
 		              				</div>
 		              			</div>
 		              		</div>
 							{%endfor%}
-				   {%endif%}
+						</div>
+					  </div>
 
-  					{%if alldrinks%}
+
+
 		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
 		                <div class="row">
 
 							{%for arrayproduct in alldrinks%}
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url({%static 'images/drink-1.jpg'%});"></a>
+		              				<a class="menu-img img mb-4" style="background-image: url({{arrayproduct.image}});"></a>
 		              				<div class="text">
-		              					<h3><a href="#">{{arrayproduct.saucer}}</a></h3>
+		              					<h3><a>{{arrayproduct.saucer}}</a></h3>
 		              					<p>{{arrayproduct.description}}</p>
 		              					<p class="price"><span>Q{{arrayproduct.price}}</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              					<p><a href="{%url 'menu:cart'%}" class="btn btn-primary btn-outline-primary">Añadir al carrito</a></p>
 		              				</div>
 		              			</div>
 		              		</div>
 							{%endfor%}
-				    {%endif%}
+						</div>
+					  </div>
 
 		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
 		                <div class="row">
 
-
+							{%for arrayproduct in allpostres%}
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url({%static 'images/dessert-1.jpg'%});"></a>
+		              				<a class="menu-img img mb-4" style="background-image: url({{arrayproduct.image}});"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Hot Cake Honey</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
+		              					<h3><a>{{arrayproduct.saucer}}</a></h3>
+		              					<p{{arrayproduct.description}}</p>
+		              					<p class="price"><span>Q{{arrayproduct.price}}</span></p>
+		              					<p><a href="{%url 'menu:cart'%}" class="btn btn-primary btn-outline-primary">Añadir al carrito</a></p>
 		              				</div>
 		              			</div>
 		              		</div>
-
+							{%endfor%}
 		              	</div>
 		              </div>
 		            </div>
+					{%endif%}
 		          </div>
 		        </div>
 		      </div>
 		    </div>
-    	</div>
     	</section>
 
     <footer class="ftco-footer ftco-section img">

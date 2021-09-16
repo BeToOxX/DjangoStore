@@ -7282,13 +7282,13 @@ body {
     width: 100%; }
 
 span {
-  color: #bfbfbf; }
+  color: #c49b63; }
 
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #c49b63; }
+  color: #FF0000; }
   a:hover, a:active, a:focus {
     color: #c49b63;
     outline: none !important;
@@ -8109,7 +8109,7 @@ h1, h2, h3, h4, h5,
         font-size: 16px;
         text-transform: uppercase; }
     .table tbody tr td.total, .table tbody tr td.price {
-      color: #fff; }
+      color: ##c49b63; }
 
 .cart-wrap .btn-primary {
   display: block;
@@ -8219,12 +8219,12 @@ h1, h2, h3, h4, h5,
     font-size: 18px;
     text-transform: uppercase; }
     .menu-wrap .text h3 a {
-      color: #fff; }
+      color: ##FF0000; }
   .menu-wrap .text .price {
     font-size: 18px;
     font-weight: 400; }
     .menu-wrap .text .price span {
-      color: #fff; }
+      color: #c49b63; }
 
 .ftco-appointment {
   width: 100%;
@@ -8957,7 +8957,7 @@ textarea.form-control {
       border: 1px solid transparent; }
 
 .contact-section .contact-info p span {
-  color: #fff; }
+  color: #c49b63; }
 
 .contact-form .form-group {
   position: relative; }

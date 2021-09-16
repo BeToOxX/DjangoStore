@@ -5,7 +5,7 @@ def index(request):
     allproduct = product.objects.filter(fk_tipo_producto=1)
     alldrinks = product.objects.filter(fk_tipo_producto=2)
     allpostres = product.objects.filter(fk_tipo_producto=3)
-    return render(request, 'index.html', {'allproduct':allproduct,'alldrinks':alldrinks})
+    return render(request, 'index.html', {'allproduct':allproduct,'alldrinks':alldrinks, 'allpostres':allpostres})
 
 def contact(request):
     return render(request, 'contact.html')
