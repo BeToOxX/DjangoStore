@@ -140,9 +140,8 @@ sup {
   top: -.5em; }
 
 a {
-  color: #78d5ef;
+  color: #c49b63;
   text-decoration: none;
-  background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
     color: #34c0e7;
@@ -7967,7 +7966,7 @@ h1, h2, h3, h4, h5,
     font-size: 18px;
     text-transform: uppercase; }
     .menu-entry .text h3 a {
-      color: #fff; }
+      color: #c49b63; }
   .menu-entry .text .price span {
     color: #fff;
     font-size: 18px; }

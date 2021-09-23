@@ -76,15 +76,15 @@ WSGI_APPLICATION = 'DevStore.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 #DATABASES = {
- #   'default': {
-  #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-   #     'NAME': 'DBstore',
-  #      'USER': 'Ruben',
-  #      'PASSWORD': '12345',
-  #      'HOST': '127.0.0.1',
-  #      'PORT': 5432
-  #  }
-# }
+    #'default': {
+     # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+      #  'NAME': 'DBstore',
+       # 'USER': 'Ruben',
+        #'PASSWORD': '12345',
+        #'HOST': '127.0.0.1',
+        #'PORT': 5432
+    #}
+ #}
 
 #DATABASES = {
 #    'default': {
